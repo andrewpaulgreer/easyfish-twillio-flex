@@ -23,8 +23,14 @@ export default class GettingStartedPlugin extends FlexPlugin {
   init(flex, manager) {
     this.registerReducers(manager);
     
-    manager.strings.NoTasks = "No Tasks, make some Coffe"
+    manager.strings.NoTasks = "No Tasks, make some Coffee"
     
+    flex.CRMContainer
+  .defaultProps
+  .uriCallback = (task) => task
+    ? `https://www.bing.com/search?q=${task.attributes.name}`
+    : "http://bing.com/";
+
     // flex.AgentDesktopView.defaultProps.showPanel2 = false;
     
     flex.TaskInfoPanel.Content.add(
