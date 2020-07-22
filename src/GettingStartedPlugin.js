@@ -1,8 +1,9 @@
 import React from 'react';
-import { VERSION } from '@twilio/flex-ui';
+import { VERSION, flexStoreEnhancer } from '@twilio/flex-ui';
 import { FlexPlugin } from 'flex-plugin';
 
 import CustomTaskListContainer from './components/CustomTaskList/CustomTaskList.Container';
+import TodoTaskComponent from './components/TodoTaskList/CustomTodo'
 import reducers, { namespace } from './states';
 
 const PLUGIN_NAME = 'GettingStartedPlugin';
@@ -23,12 +24,22 @@ export default class GettingStartedPlugin extends FlexPlugin {
     this.registerReducers(manager);
     
     manager.strings.NoTasks = "No Tasks, make some Coffe"
+    
     flex.AgentDesktopView.defaultProps.showPanel2 = false;
+    
+    flex.AgentDesktopView.Panel1.Content.add(
+      <TodoTaskComponent key="todo-list" />,
+      {
+        sortOrder: -1
+      },
+    )
+
     const options = { sortOrder: -1 };
     flex.AgentDesktopView
       .Panel1
       .Content
       .add(<CustomTaskListContainer key="demo-component" />, options);
+     
   }
 
   /**
