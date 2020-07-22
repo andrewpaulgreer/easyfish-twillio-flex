@@ -25,13 +25,14 @@ export default class GettingStartedPlugin extends FlexPlugin {
     
     manager.strings.NoTasks = "No Tasks, make some Coffe"
     
-    flex.AgentDesktopView.defaultProps.showPanel2 = false;
+    // flex.AgentDesktopView.defaultProps.showPanel2 = false;
     
-    flex.AgentDesktopView.Panel1.Content.add(
+    flex.TaskInfoPanel.Content.add(
       <TodoTaskComponent key="todo-list" />,
       {
-        sortOrder: -1
-      },
+        sortOrder: -1,
+      }
+     
     )
 
     const options = { sortOrder: -1 };
