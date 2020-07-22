@@ -25,11 +25,11 @@ export default class GettingStartedPlugin extends FlexPlugin {
     
     manager.strings.NoTasks = "No Tasks, make some Coffee"
     
-    flex.CRMContainer
+  flex.CRMContainer
   .defaultProps
   .uriCallback = (task) => task
-    ? `https://www.bing.com/search?q=${task.attributes.name}`
-    : "http://bing.com/";
+    ? `https://easyfish.api-us1.com?q=`
+    : "https://easyfish.api-us1.com";
 
     // flex.AgentDesktopView.defaultProps.showPanel2 = false;
     
