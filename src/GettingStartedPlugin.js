@@ -24,8 +24,14 @@ export default class GettingStartedPlugin extends FlexPlugin {
   init(flex, manager) {
     this.registerReducers(manager);
     
+    // Logo Update
+    flex.MainHeader.defaultProps.logoUrl = "http://d9hhrg4mnvzow.cloudfront.net/leads.easyfishmarketing.com/2ad211d1-eflogo1_000000000000000000001.png"
+
+
+    // no tasks message
     manager.strings.NoTasks = "No Tasks, make some Coffee"
     
+    // UI config for colors 
     manager.updateConfig({
       colorTheme: {
         baseName: "Light Grey",
@@ -33,6 +39,7 @@ export default class GettingStartedPlugin extends FlexPlugin {
       }
     })
 
+    // CRMConatianer iFrame
   flex.CRMContainer
   .defaultProps
   .uriCallback = (task) => task
@@ -41,7 +48,7 @@ export default class GettingStartedPlugin extends FlexPlugin {
     : "https://easyfish.api-us1.com";
 
     // flex.AgentDesktopView.defaultProps.showPanel2 = false;
-    
+    // task info panel adding todo list
     flex.TaskInfoPanel.Content.add(
       <TodoTaskComponent key="todo-list" />,
       {
