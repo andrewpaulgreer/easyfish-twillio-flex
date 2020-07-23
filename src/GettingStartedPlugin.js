@@ -5,6 +5,7 @@ import { FlexPlugin } from 'flex-plugin';
 import CustomTaskListContainer from './components/CustomTaskList/CustomTaskList.Container';
 import TodoTaskComponent from './components/TodoTaskList/CustomTodo'
 import reducers, { namespace } from './states';
+import CustomThemes from './CustomThemes'
 
 const PLUGIN_NAME = 'GettingStartedPlugin';
 
@@ -25,9 +26,17 @@ export default class GettingStartedPlugin extends FlexPlugin {
     
     manager.strings.NoTasks = "No Tasks, make some Coffee"
     
+    manager.updateConfig({
+      colorTheme: {
+        baseName: "Light Grey",
+        overrides: CustomThemes
+      }
+    })
+
   flex.CRMContainer
   .defaultProps
   .uriCallback = (task) => task
+    // set up for mystery API call, had a few uncessessful attempts here
     ? `https://easyfish.api-us1.com?q=`
     : "https://easyfish.api-us1.com";
 
