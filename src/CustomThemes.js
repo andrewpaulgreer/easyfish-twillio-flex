@@ -1,5 +1,4 @@
-const twilioBlue = "#0D122B";
-const customBlue = "#356ae6";
+
 const customSlate = "#4e5468";
 const white = "#ffffff"
 const offGrey = "#D3D3D3"
