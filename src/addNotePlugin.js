@@ -1,12 +1,13 @@
+import NoteForm from './NoteForm'
+import NoteSidebar from './NoteSidebar'
 import {FlexPlugin} from 'flex-plugin';
 import React from 'react';
-import {View} from '@twilio/flex-ui';
-import CustomView from './CustomView';
-import CustomSideBarBtn from './CustomSideBarBtn'
-const PLUGIN_NAME = 'AddCustomViewPlugin';
+import {View} from '@twilio/flex-ui';;
+
+const PLUGIN_NAME = 'AddNotePlugin';
 
 
-export default class ActionsPlugin extends FlexPlugin {
+export default class AddNotePlugin extends FlexPlugin {
 constructor(){
     super(PLUGIN_NAME);
 }
@@ -22,14 +23,13 @@ constructor(){
     // flex.Actions.addListener("afterAcceptTask", (payload) => {
     //     alert("New Task")
   flex.SideNav.Content.add(
-      <CustomSideBarBtn key="custom-view-button" />
-      
+      <NoteSidebar key="note-view-button" />
   );
 
   flex.ViewCollection.Content.add(
-      <View name="custom-view" key="custom-view">
-          <CustomView />
-      </View>
+            <View name="note-view" key="note-view">
+            <NoteForm />
+            </View>
   )
 }
 }

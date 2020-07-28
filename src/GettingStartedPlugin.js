@@ -1,5 +1,5 @@
 import React from 'react';
-import { VERSION, flexStoreEnhancer } from '@twilio/flex-ui';
+import { VERSION} from '@twilio/flex-ui';
 import { FlexPlugin } from 'flex-plugin';
 
 import CustomTaskListContainer from './components/CustomTaskList/CustomTaskList.Container';
@@ -38,6 +38,8 @@ export default class GettingStartedPlugin extends FlexPlugin {
         overrides: CustomThemes
       }
     })
+
+
 
     // CRMConatianer iFrame
   flex.CRMContainer
