@@ -24,7 +24,7 @@
     "react-dom": "16.5.2",
     "react-emotion": "9.2.6",
     "react-iframe": "^1.8.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "5.0.1"
   },
   "devDependencies": {
     "@twilio/flex-ui": "^1",
